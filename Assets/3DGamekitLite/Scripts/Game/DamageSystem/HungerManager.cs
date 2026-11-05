@@ -35,7 +35,6 @@ public class HungerManager : MonoBehaviour
             damageSource = Vector3.zero,
             throwing = false,
             stopCamera = false,  
-            
         };
         damageable.ApplyDamage(hunger);
     }
