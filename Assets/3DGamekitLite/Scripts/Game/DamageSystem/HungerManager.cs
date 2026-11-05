@@ -13,9 +13,7 @@ public class HungerManager : MonoBehaviour
 
 
     }
-
-
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -24,10 +22,7 @@ public class HungerManager : MonoBehaviour
         {
             DealDamage();
             timer = 0f; 
-            
         }
-        
-
     }
 
     void DealDamage()
@@ -43,6 +38,11 @@ public class HungerManager : MonoBehaviour
             
         };
         damageable.ApplyDamage(hunger);
+    }
+    
+    public void ResetTimer()
+    {
+        timer = 0f;
     }
 
 
