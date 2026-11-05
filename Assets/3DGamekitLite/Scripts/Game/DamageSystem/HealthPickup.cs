@@ -19,6 +19,7 @@ public class HealthPickup : MonoBehaviour
         {
             damageable.ResetDamage();
             hungerManager.ResetTimer();
+            Debug.Log("TimerReset");
             Destroy((gameObject));
         }
     }
