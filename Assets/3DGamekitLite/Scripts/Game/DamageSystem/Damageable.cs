@@ -41,6 +41,7 @@ namespace Gamekit3D
         {
             ResetDamage();
             m_Collider = GetComponent<Collider>();
+            
         }
 
         void Update()
@@ -123,7 +124,7 @@ namespace Gamekit3D
                 schedule = null;
             }
         }
-
+        
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
