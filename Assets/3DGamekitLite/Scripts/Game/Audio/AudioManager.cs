@@ -1,4 +1,7 @@
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
+using Gamekit3D;
 
 public class AudioManager : MonoBehaviour
 {
