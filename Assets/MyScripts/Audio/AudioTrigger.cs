@@ -11,27 +11,29 @@ public enum MusicTypes
 } 
 public class AudioTrigger : MonoBehaviour
 {
+    // EventInstance eventInstance;
+    
+    [System.Serializable] 
     public struct MusicData
     {
         public MusicTypes music;
+        public EventReference eventRef;
 
     }
     
-    [SerializeField] EventInstance eventInstance;
-    [SerializeField] EventReference eventRef;
     
     MusicTypes musicType;
-    MusicData[] musics;
+    
+    [SerializeField] MusicData[] musics;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        eventInstance=RuntimeManager.CreateInstance("eventInstance");
+       /* eventInstance=RuntimeManager.CreateInstance("eventInstance");
         eventInstance.start();
         
         eventInstance.getPlaybackState(out PLAYBACK_STATE playbackState);
-        Debug.Log(playbackState);
-        
+        Debug.Log(playbackState);*/
         
         foreach (MusicData musicData in musics )
         {
