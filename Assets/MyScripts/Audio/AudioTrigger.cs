@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using FMOD.Studio;
@@ -11,48 +12,28 @@ public enum MusicTypes
 } 
 public class AudioTrigger : MonoBehaviour
 {
-    // EventInstance eventInstance;
-    
-    [System.Serializable] 
-    public struct MusicData
-    {
-        public MusicTypes music;
-        public EventReference eventRef;
-
-    }
-    
-    
-    MusicTypes musicType;
-    
-    [SerializeField] MusicData[] musics;
+    AudioManager audioManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-       /* eventInstance=RuntimeManager.CreateInstance("eventInstance");
-        eventInstance.start();
-        
-        eventInstance.getPlaybackState(out PLAYBACK_STATE playbackState);
-        Debug.Log(playbackState);*/
-        
-        foreach (MusicData musicData in musics )
-        {
-            switch (musicData.music)
-            {
-                case MusicTypes.Zone1:
-                    //runk
-                    Debug.Log("Zone 1");
-                    break;
-            }
-        }
-
-        
+      audioManager=GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            audioManager.Play();
+            Debug.Log("playing");
+        }
+        
+    }   
 }
